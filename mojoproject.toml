@@ -2,17 +2,17 @@
 authors = ["saviorand"]
 channels = ["conda-forge", "https://conda.modular.com/max", "https://repo.prefix.dev/mojo-community"]
 description = "Simple and fast HTTP framework for Mojo!"
-name = "ff4f00_http"
+name = "ff4f00"
 platforms = ["osx-arm64", "linux-64", "linux-aarch64"]
 version = "0.1.16"
 
 [tasks]
 build = { cmd = "rattler-build build --recipe recipes -c https://conda.modular.com/max -c conda-forge --skip-existing=all", env = {MODULAR_MOJO_IMPORT_PATH = "$CONDA_PREFIX/lib/mojo"} }
 publish = { cmd = "bash scripts/publish.sh", env = { PREFIX_API_KEY = "$PREFIX_API_KEY" } }
-format = { cmd = "magic run mojo format -l 120 ff4f00_http" }
+format = { cmd = "magic run mojo format -l 120 ff4f00" }
 
 [feature.unit-tests.tasks]
-test = { cmd = "magic run mojo test -I . tests/ff4f00_http" }
+test = { cmd = "magic run mojo test -I . tests/ff4f00" }
 
 [feature.integration-tests.tasks]
 integration_tests_py = { cmd = "bash scripts/integration_test.sh" }
