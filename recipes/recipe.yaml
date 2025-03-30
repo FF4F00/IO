@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+
+context:
+  version: "0.1.16"
+
+package:
+  name: "ff4f00_http"
+  version: 0.1.16
+
+source:
+  - path: ../ff4f00_http
+  - path: ../LICENSE
+
+build:
+  script:
+    - mkdir -p ${PREFIX}/lib/mojo
+    - magic run mojo package . -o ${PREFIX}/lib/mojo/ff4f00_http.mojopkg
+
+requirements:
+  run:
+    - max >=25.1.0
+    - small_time == 25.1.0
+
+about:
+  homepage: https://github.com/saviorand/ff4f00_http
+  license: MIT
+  license_file: LICENSE
+  summary: ff4f00 is a simple and sweet HTTP framework for Mojo
+  repository: https://github.com/saviorand/ff4f00_http
