@@ -1,4 +1,4 @@
-from ff4f00_http.http import HTTPResponse
+from ff4f00.http import HTTPResponse
 
 alias TODO_MESSAGE = "TODO".as_bytes()
 

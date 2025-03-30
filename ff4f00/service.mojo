@@ -1,7 +1,7 @@
-from ff4f00_http.http import HTTPRequest, HTTPResponse, OK, NotFound
-from ff4f00_http.io.bytes import Bytes, bytes
-from ff4f00_http.strings import to_string
-from ff4f00_http.header import HeaderKey
+from ff4f00.http import HTTPRequest, HTTPResponse, OK, NotFound
+from ff4f00.io.bytes import Bytes, bytes
+from ff4f00.strings import to_string
+from ff4f00.header import HeaderKey
 
 
 trait HTTPService:

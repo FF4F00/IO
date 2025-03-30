@@ -3,7 +3,7 @@ from utils import StaticTuple
 from sys import sizeof, external_call
 from sys.info import os_is_macos
 from memory import Pointer, UnsafePointer
-from ff4f00_http._libc import (
+from ff4f00._libc import (
     socket,
     connect,
     recv,
@@ -44,8 +44,8 @@ from ff4f00_http._libc import (
     CloseInvalidDescriptorError,
     ShutdownInvalidArgumentError,
 )
-from ff4f00_http.io.bytes import Bytes
-from ff4f00_http.address import (
+from ff4f00.io.bytes import Bytes
+from ff4f00.address import (
     NetworkType,
     Addr,
     binary_port_to_int,
@@ -53,8 +53,8 @@ from ff4f00_http.address import (
     addrinfo_macos,
     addrinfo_unix,
 )
-from ff4f00_http.connection import default_buffer_size
-from ff4f00_http._logger import logger
+from ff4f00.connection import default_buffer_size
+from ff4f00._logger import logger
 
 
 alias SocketClosedError = "Socket: Socket is already closed"

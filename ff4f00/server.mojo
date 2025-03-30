@@ -1,16 +1,16 @@
 from memory import Span
-from ff4f00_http.io.sync import Duration
-from ff4f00_http.io.bytes import Bytes, BytesConstant, ByteView, ByteReader, bytes
-from ff4f00_http.address import NetworkType
-from ff4f00_http._logger import logger
-from ff4f00_http.connection import NoTLSListener, default_buffer_size, TCPConnection, ListenConfig
-from ff4f00_http.socket import Socket
-from ff4f00_http.http import HTTPRequest, encode
-from ff4f00_http.http.common_response import InternalError, BadRequest
-from ff4f00_http.uri import URI
-from ff4f00_http.header import Headers
-from ff4f00_http.service import HTTPService
-from ff4f00_http.error import ErrorHandler
+from ff4f00.io.sync import Duration
+from ff4f00.io.bytes import Bytes, BytesConstant, ByteView, ByteReader, bytes
+from ff4f00.address import NetworkType
+from ff4f00._logger import logger
+from ff4f00.connection import NoTLSListener, default_buffer_size, TCPConnection, ListenConfig
+from ff4f00.socket import Socket
+from ff4f00.http import HTTPRequest, encode
+from ff4f00.http.common_response import InternalError, BadRequest
+from ff4f00.uri import URI
+from ff4f00.header import Headers
+from ff4f00.service import HTTPService
+from ff4f00.error import ErrorHandler
 
 
 alias DefaultConcurrency: Int = 256 * 1024
@@ -33,7 +33,7 @@ struct Server(Movable):
     fn __init__(
         out self,
         error_handler: ErrorHandler = ErrorHandler(),
-        name: String = "ff4f00_http",
+        name: String = "ff4f00",
         address: String = "127.0.0.1",
         max_concurrent_connections: UInt = 1000,
         max_requests_per_connection: UInt = 0,

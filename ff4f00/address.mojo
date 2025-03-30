@@ -1,11 +1,11 @@
 from memory import UnsafePointer, Span
 from collections import Optional
 from sys.ffi import external_call, OpaquePointer
-from ff4f00_http.strings import to_string
-from ff4f00_http.io.bytes import ByteView
-from ff4f00_http._logger import logger
-from ff4f00_http.socket import Socket
-from ff4f00_http._libc import (
+from ff4f00.strings import to_string
+from ff4f00.io.bytes import ByteView
+from ff4f00._logger import logger
+from ff4f00.socket import Socket
+from ff4f00._libc import (
     c_int,
     c_char,
     in_addr,

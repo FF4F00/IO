@@ -1,5 +1,5 @@
-from ff4f00_http import *
-from ff4f00_http.client import Client
+from ff4f00 import *
+from ff4f00.client import Client
 
 
 fn test_request(mut client: Client) raises -> None:

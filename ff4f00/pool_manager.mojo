@@ -4,10 +4,10 @@ from builtin.value import StringableCollectionElement
 from memory import UnsafePointer, bitcast, memcpy
 from collections import Dict, Optional
 from collections.dict import RepresentableKeyElement
-from ff4f00_http.connection import create_connection, TCPConnection, Connection
-from ff4f00_http._logger import logger
-from ff4f00_http._owning_list import OwningList
-from ff4f00_http.uri import Scheme
+from ff4f00.connection import create_connection, TCPConnection, Connection
+from ff4f00._logger import logger
+from ff4f00._owning_list import OwningList
+from ff4f00.uri import Scheme
 
 
 @value

@@ -1,7 +1,7 @@
 from collections import Optional, List, Dict, KeyElement
-from ff4f00_http.strings import to_string
-from ff4f00_http.header import HeaderKey, write_header
-from ff4f00_http.io.bytes import ByteWriter
+from ff4f00.strings import to_string
+from ff4f00.header import HeaderKey, write_header
+from ff4f00.io.bytes import ByteWriter
 
 
 @value

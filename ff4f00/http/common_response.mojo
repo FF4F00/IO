@@ -1,4 +1,4 @@
-from ff4f00_http.io.bytes import Bytes
+from ff4f00.io.bytes import Bytes
 
 
 fn OK(body: String, content_type: String = "text/plain") -> HTTPResponse:

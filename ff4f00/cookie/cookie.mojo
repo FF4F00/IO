@@ -1,5 +1,5 @@
 from collections import Optional
-from ff4f00_http.header import HeaderKey
+from ff4f00.header import HeaderKey
 
 
 struct Cookie(CollectionElement):

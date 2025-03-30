@@ -1,9 +1,9 @@
 from collections import Optional, List, Dict
 from small_time import SmallTime, TimeZone
 from small_time.small_time import strptime
-from ff4f00_http.strings import to_string, lineBreak
-from ff4f00_http.header import HeaderKey, write_header
-from ff4f00_http.io.bytes import ByteReader, ByteWriter, is_newline, is_space
+from ff4f00.strings import to_string, lineBreak
+from ff4f00.header import HeaderKey, write_header
+from ff4f00.io.bytes import ByteReader, ByteWriter, is_newline, is_space
 
 
 @value

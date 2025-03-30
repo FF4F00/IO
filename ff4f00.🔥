@@ -1,4 +1,4 @@
-from ff4f00_http import Welcome, Server
+from ff4f00 import Welcome, Server
 from os.env import getenv
 
 fn main() raises:

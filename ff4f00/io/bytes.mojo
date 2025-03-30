@@ -1,8 +1,8 @@
 from utils import StringSlice
 from testing.testing import Testable
 from memory.span import Span, _SpanIter, UnsafePointer
-from ff4f00_http.strings import BytesConstant
-from ff4f00_http.connection import default_buffer_size
+from ff4f00.strings import BytesConstant
+from ff4f00.connection import default_buffer_size
 
 
 alias Bytes = List[Byte, True]

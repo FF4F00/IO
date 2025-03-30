@@ -1,13 +1,13 @@
 from collections import Dict
 from utils import StringSlice
 from memory import UnsafePointer
-from ff4f00_http.connection import TCPConnection, default_buffer_size, create_connection
-from ff4f00_http.http import HTTPRequest, HTTPResponse, encode
-from ff4f00_http.header import Headers, HeaderKey
-from ff4f00_http.io.bytes import Bytes, ByteReader
-from ff4f00_http._logger import logger
-from ff4f00_http.pool_manager import PoolManager, PoolKey
-from ff4f00_http.uri import URI, Scheme
+from ff4f00.connection import TCPConnection, default_buffer_size, create_connection
+from ff4f00.http import HTTPRequest, HTTPResponse, encode
+from ff4f00.header import Headers, HeaderKey
+from ff4f00.io.bytes import Bytes, ByteReader
+from ff4f00._logger import logger
+from ff4f00.pool_manager import PoolManager, PoolKey
+from ff4f00.uri import URI, Scheme
 
 
 struct Client:
@@ -27,7 +27,7 @@ struct Client:
     ):
         self.host = host
         self.port = port
-        self.name = "ff4f00_http_client"
+        self.name = "ff4f00_client"
         self.allow_redirects = allow_redirects
         self._connections = PoolManager[TCPConnection](cached_connections)
 

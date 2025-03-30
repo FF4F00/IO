@@ -1,11 +1,11 @@
 from time import sleep
 from memory import Span
 from sys.info import os_is_macos
-from ff4f00_http.address import NetworkType
-from ff4f00_http.io.bytes import Bytes, ByteView, bytes
-from ff4f00_http.io.sync import Duration
-from ff4f00_http.address import parse_address, TCPAddr, UDPAddr
-from ff4f00_http._libc import (
+from ff4f00.address import NetworkType
+from ff4f00.io.bytes import Bytes, ByteView, bytes
+from ff4f00.io.sync import Duration
+from ff4f00.address import parse_address, TCPAddr, UDPAddr
+from ff4f00._libc import (
     sockaddr,
     AF_INET,
     SOCK_DGRAM,
@@ -19,8 +19,8 @@ from ff4f00_http._libc import (
     shutdown,
     close,
 )
-from ff4f00_http._logger import logger
-from ff4f00_http.socket import Socket
+from ff4f00._logger import logger
+from ff4f00.socket import Socket
 
 
 alias default_buffer_size = 4096

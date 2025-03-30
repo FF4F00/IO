@@ -1,8 +1,8 @@
 from utils import Variant, StringSlice
 from memory import Span
 from collections import Optional, Dict
-from ff4f00_http.io.bytes import Bytes, bytes, ByteReader
-from ff4f00_http.strings import (
+from ff4f00.io.bytes import Bytes, bytes, ByteReader
+from ff4f00.strings import (
     find_all,
     strSlash,
     strHttp11,

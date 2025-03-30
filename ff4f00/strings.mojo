@@ -1,6 +1,6 @@
 from utils import StringSlice
 from memory import Span
-from ff4f00_http.io.bytes import Bytes, bytes, byte
+from ff4f00.io.bytes import Bytes, bytes, byte
 
 alias strSlash = "/"
 alias strHttp = "http"

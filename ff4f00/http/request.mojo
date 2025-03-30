@@ -1,11 +1,11 @@
 from memory import Span
-from ff4f00_http.io.bytes import Bytes, bytes, ByteReader, ByteWriter
-from ff4f00_http.header import Headers, HeaderKey, Header, write_header
-from ff4f00_http.cookie import RequestCookieJar
-from ff4f00_http.uri import URI
-from ff4f00_http._logger import logger
-from ff4f00_http.io.sync import Duration
-from ff4f00_http.strings import (
+from ff4f00.io.bytes import Bytes, bytes, ByteReader, ByteWriter
+from ff4f00.header import Headers, HeaderKey, Header, write_header
+from ff4f00.cookie import RequestCookieJar
+from ff4f00.uri import URI
+from ff4f00._logger import logger
+from ff4f00.io.sync import Duration
+from ff4f00.strings import (
     strHttp11,
     strHttp,
     strSlash,

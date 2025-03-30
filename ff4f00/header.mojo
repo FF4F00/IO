@@ -1,9 +1,9 @@
 from collections import Dict, Optional
 from memory import Span
-from ff4f00_http.io.bytes import Bytes, ByteReader, ByteWriter, is_newline, is_space
-from ff4f00_http.strings import BytesConstant
-from ff4f00_http._logger import logger
-from ff4f00_http.strings import rChar, nChar, lineBreak, to_string
+from ff4f00.io.bytes import Bytes, ByteReader, ByteWriter, is_newline, is_space
+from ff4f00.strings import BytesConstant
+from ff4f00._logger import logger
+from ff4f00.strings import rChar, nChar, lineBreak, to_string
 
 
 struct HeaderKey:

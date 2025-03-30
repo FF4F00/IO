@@ -1,10 +1,10 @@
 from utils import StringSlice
 from collections import Optional
 from small_time.small_time import now
-from ff4f00_http.uri import URI
-from ff4f00_http.io.bytes import Bytes, bytes, byte, ByteReader, ByteWriter
-from ff4f00_http.connection import TCPConnection, default_buffer_size
-from ff4f00_http.strings import (
+from ff4f00.uri import URI
+from ff4f00.io.bytes import Bytes, bytes, byte, ByteReader, ByteWriter
+from ff4f00.connection import TCPConnection, default_buffer_size
+from ff4f00.strings import (
     strHttp11,
     strHttp,
     strSlash,
@@ -237,7 +237,7 @@ struct HTTPResponse(Writable, Stringable):
         writer.write(self.protocol, whitespace, self.status_code, whitespace, self.status_text, lineBreak)
 
         if HeaderKey.SERVER not in self.headers:
-            writer.write("server: ff4f00_http", lineBreak)
+            writer.write("server: ff4f00", lineBreak)
 
         writer.write(self.headers, self.cookies, lineBreak, to_string(self.body_raw))
 
@@ -255,7 +255,7 @@ struct HTTPResponse(Writable, Stringable):
             whitespace,
             self.status_text,
             lineBreak,
-            "server: ff4f00_http",
+            "server: ff4f00",
             lineBreak,
         )
         if HeaderKey.DATE not in self.headers:
