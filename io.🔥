@@ -1,8 +1,8 @@
 from ff4f00 import Welcome, Server
 from os.env import getenv
-from ff4f00.surrealdb import *
-from ff4f00.strawberry import *
-from ff4f00.iD import *
+# from ff4f00.surrealdb import *
+# from ff4f00.strawberry import *
+# from ff4f00.iD import *
 
 fn main() raises:
     var server = Server()
