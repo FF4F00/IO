@@ -1,72 +1,14 @@
-from ff4f00 import *
-from ff4f00.io.bytes import Bytes, bytes
-
-@value
-struct ExampleRouter(HTTPService):
-    fn func(mut self, req: HTTPRequest) raises -> HTTPResponse:
-        var body = req.body_raw
-        var uri = req.uri
-
-        if uri.path == "/":
-            var html = bytes("""
-                <html>
-                    <head><title>Index</title></head>
-                    <body>
-                        <h1>Welcome to the Index Page</h1>
-                        <p>Try these routes:</p>
-                        <ul>
-                            <li><a href="/first">/first</a></li>
-                            <li><a href="/second">/second</a></li>
-                            <li><a href="/echo">/echo</a></li>
-                        </ul>
-                    </body>
-                </html>
-            """)
-            return OK(html, "text/html; charset=utf-8")
-
-        if uri.path == "/first":
-            var html = bytes("""
-                <html>
-                    <head><title>First Route</title></head>
-                    <body>
-                        <h1>First Route</h1>
-                        <p>You're on the first route!</p>
-                        <a href="/">Back to Index</a>
-                    </body>
-                </html>
-            """)
-            return OK(html, "text/html; charset=utf-8")
-
-        elif uri.path == "/second":
-            var html = bytes("""
-                <html>
-                    <head><title>Second Route</title></head>
-                    <body>
-                        <h1>Second Route</h1>
-                        <p>You're on the second route!</p>
-                        <a href="/">Back to Index</a>
-                    </body>
-                </html>
-            """)
-            return OK(html, "text/html; charset=utf-8")
-
-        elif uri.path == "/echo":
-            var html = bytes("""
-                <html>
-                    <head><title>Echo</title></head>
-                    <body>
-                        <h1>Echo Route</h1>
-                        <p>Request body:</p>
-                        <pre>""" + to_string(body) + """</pre>
-                        <a href="/">Back to Index</a>
-                    </body>
-                </html>
-            """)
-            return OK(html, "text/html; charset=utf-8")
-
-        return NotFound(uri.path)
+from ff4f00 import Welcome, Server
+from os.env import getenv
+from ff4f00.surrealdb import *
+from ff4f00.strawberry import *
+from ff4f00.iD import *
 
 fn main() raises:
     var server = Server()
-    var handler = ExampleRouter()
-    server.listen_and_serve("localhost:8080", handler)
+    var handler = Welcome()
+    
+    var host = getenv("DEFAULT_SERVER_HOST", "localhost")
+    var port = getenv("DEFAULT_SERVER_PORT", "8080")
+
+    server.listen_and_serve(host + ":" + port, handler)
