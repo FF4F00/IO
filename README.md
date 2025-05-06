@@ -1,95 +1,149 @@
-# IO Platform Specification
+# IO
 
-## Overview
+<div style="float: right">Synopsis</div>
+<hr>
 
-IO is a developer platform built on the Mojo programming language and the FF4F00 web framework. It enables seamless deployment of single-binary Mojo applications using modern cloud primitives like AWS, Cloudflare, SurrealDB, and Storj.
+![Version](https://img.shields.io/badge/version-0.0.1-blue) ![Build Status](https://img.shields.io/github/actions/workflow/status/io-platform/io/main.yml)
 
-This document defines the feature set split between the **IO CLI** and the **IO Web Interface** for the MVP.
+A premium deployment orchestrator built for applications written in [Mojo](https://www.modular.com/mojo) using the [FF4F00](https://github.com/ff4f00/ff4f00) framework. IO provides a seamless CLI and web interface for developers to manage compute, data, storage, and networking infrastructure using a well-curated set of cloud-native primitives.
 
----
+#### Key Features  
+✅ CLI-first experience inspired by shuttle.rs  
+✅ Firebase-style dashboard for real-time app management  
+✅ Seamless deployment from Neovim to iOS/Android/browser  
 
-## 🧰 IO CLI — Developer-Centric Control
+Quick Install Guide otherwise follow link to Documentation below
 
-The CLI is the primary interface for developers. It prioritizes speed, clarity, and infrastructure-as-code behavior.
+For questions or issues, please open an [issue](https://github.com/io-platform/io/issues) or contact us at support@ff4f00.io.
 
-### Core Commands
-
-| Command             | Description                                                                 |
-|---------------------|-----------------------------------------------------------------------------|
-| `io init`           | Bootstrap a new project and collect credentials (AWS, Cloudflare, Storj)   |
-| `io build`          | Compile project into a single Mojo binary                                   |
-| `io deploy`         | Provision infrastructure and deploy binary (EC2 or Lambda)                  |
-| `io destroy`        | Tear down project infrastructure                                            |
-| `io status`         | Show real-time status of deployment and services                            |
-| `io logs`           | Tail logs from EC2 or Lambda                                                |
-| `io open`           | Open the IO dashboard in the browser                                        |
-| `io config`         | View or edit project configuration                                          |
-| `io db shell`       | Launch an interactive SurrealDB shell                                       |
-| `io storage push`   | Upload file(s) to Storj bucket                                              |
-| `io storage stats`  | Display usage and health info for storage                                   |
-
-### Authentication and Configuration
-
-- Config file: `~/.io/config`
-- Environment variable fallback for automation
-- Credential validation occurs at `init` and deploy time
+<div style="text-align: center;"><a href="#">Contribution / Code of Conduct</a></div>
 
 ---
 
-## 🧑‍💻 IO Web Interface — Visual Feedback and Insights
+## Analysis
+<hr>
 
-The IO UI provides a real-time, Firebase-style dashboard for monitoring and interaction.
+### Market
 
-### Dashboard Features
+> Problem Statement
 
-| Feature                 | Description                                                            |
-|--------------------------|------------------------------------------------------------------------|
-| **Project Overview**     | Shows deployment status, domain, and runtime metadata                  |
-| **Live Health**          | Displays instance health, uptime, and error rates                      |
-| **Log Viewer**           | Searchable, filterable live logs from deployments                      |
-| **Cloudflare DNS**       | View synced DNS records and domain mapping                             |
-| **Surrealist Embedded**  | Full SurrealDB UI experience for live data and schema interaction      |
-| **Storj Dashboard**      | File browser, storage stats, bandwidth and uptime charts               |
-| **Deploy History**       | Timeline of deployments with binary hash and commit metadata           |
+Modern fullstack development is fragmented. Developers must piece together DevOps, cloud provisioning, authentication, deployment pipelines, and infrastructure. This leads to bloated toolchains, slow iteration, and steep learning curves.
 
-### Developer Tools
+> Value Proposition
 
-| Tool                    | Description                                                              |
-|--------------------------|--------------------------------------------------------------------------|
-| **Simulators (opt-in)** | Embed browser, iOS, or Android simulators for preview (future scope)     |
-| **AI Copilot**           | SurrealDB AI and Modular Max integration for natural query/code (MVP+)   |
-
-### Project Settings
-
-| Setting               | Description                                                              |
-|------------------------|--------------------------------------------------------------------------|
-| **Secrets Manager**    | Manage secrets and API keys                                              |
-| **DNS Mapping**        | View and update domain routes (if permitted by token scope)              |
-| **Resource Control**   | Change instance type, memory, or region (future extension)               |
+IO offers a single control plane to build, launch, and scale Mojo applications using just the CLI and a clean web UI. It removes all DevOps overhead, supports realtime deployment feedback, and provides integrations with Web3, AI, and cross-platform tools — all while relying only on best-in-class primitives.
 
 ---
 
-## 🚦 CLI vs UI Responsibilities
+### Cost
 
-| Task                               | CLI             | UI             |
-|------------------------------------|------------------|----------------|
-| Initialize project                 | ✅               | ⛔️             |
-| Deploy binary                      | ✅               | ⛔️             |
-| View logs                          | ✅               | ✅             |
-| Manage DNS                         | ⛔️ (view only)   | ✅ (partial)   |
-| Manage SurrealDB data              | ✅ (`db shell`)   | ✅ (Surrealist)|
-| Upload/View storage                | ✅               | ✅             |
-| See project health & metrics       | ✅               | ✅             |
-| View/change secrets                | ⛔️               | ✅             |
-| Visualize deployment history       | ⛔️               | ✅             |
-| Use AI features                    | ⛔️               | ✅ (MVP+)      |
+- 🛠 Developer tooling: Free and open source
+- ☁️ Cloud costs: Billed to user's AWS, Cloudflare, Storj accounts
+- 🔐 Optional: Enterprise-grade SaaS tier with enhanced UI, autoscaling, and monitoring (coming soon)
 
 ---
 
-## ✅ MVP Completion Criteria
+### Technical
 
-- [ ] End-to-end deployment via `io init` → `io build` → `io deploy`
-- [ ] Web dashboard shows live health, logs, DNS, DB, and storage stats
-- [ ] Users can inspect and interact with SurrealDB from the UI
-- [ ] Real-world app accessible from public domain
+- Language: Mojo (compiled single-binary apps)
+- CLI: Shell scripts → refactored into dynamic Mojo programs
+- UI: Firebase-style, with integrated Surrealist (DB), Storj stats, and AI tools
+- Providers:
+  - AWS (EC2, Lambda, Auto Scaling Groups)
+  - SurrealDB (local + remote)
+  - Storj (storage APIs and telemetry)
+  - Cloudflare (networking, DNS)
+- AI Integration: Modular Max + SurrealDB AI for assistant & automation
 
+---
+
+## Specification
+<hr>
+
+### Objective
+
+> Provide a zero-friction, CLI-driven and web-assisted platform for deploying Mojo-based FF4F00 applications using a trusted, minimal set of infrastructure primitives.
+
+> Constraints
+
+- Must use only:
+  - **Cloudflare** for DNS and network
+  - **AWS (EC2, ASG, Lambda)** for compute
+  - **SurrealDB** for data
+  - **Storj** for object storage
+- No Docker, Node.js, Electron, or virtual machines
+- Apps must compile to a single binary
+- Deployment must work from Neovim or terminal without boilerplate
+
+---
+
+### Outline
+
+**Core IO Stack:**
+
+- **Network Layer**
+  - Cloudflare DNS management (auto-provision and sync)
+  - Real-time DNS/IP sync to EC2
+- **Compute Layer**
+  - Launch EC2 instances from CLI
+  - Deploy to Lambda or scale with ASGs
+- **Data Layer**
+  - Provision and manage SurrealDB (embedded or external)
+  - Embed Surrealist in UI for DB management
+- **Storage Layer**
+  - Provision Storj buckets and serve files
+  - Show bandwidth, object stats in UI
+
+**User Experience:**
+
+- `io init` to set up an app
+- `io deploy` to launch to AWS
+- `io open` to view status and logs
+- Auto-detects DNS, configures routes, and bootstraps runtime
+- Optional MFA/secret manager support
+
+---
+
+### Timeline
+
+- ✅ Q1 2025: CLI prototyped with shell
+- ✅ Q2 2025: Mojo refactor started
+- 🔜 Q3 2025: Full UI + Surrealist + Storj integration
+- 🔜 Q4 2025: AI tooling, iOS/Android simulator interface
+- 🔜 Q1 2026: Hosted IO SaaS & plugin store
+
+---
+
+## Implementation
+<hr>
+
+### Operations
+
+- Manages credential setup: AWS access keys, Storj auth, Cloudflare API
+- Pulls network info from Cloudflare for real-time DNS sync
+- Manages lifecycle of EC2, ASG, and Lambda via minimal templates
+- Deployments are idempotent and incremental
+
+---
+
+### Management
+
+- Embedded admin panel (IO UI)
+- Surrealist dashboard for querying live DB
+- Storj dashboard for monitoring storage usage and file activity
+- MFA + role-based access for managing projects
+
+---
+
+### Development
+
+- CLI-first developer interface (`io`)
+- Mojo-native CLI, shell-compatible
+- All project settings live in a single config file
+- Supports simulator previews (browser, iOS, Android)
+- AI assistant baked into CLI and UI (via maia plugin)
+
+---
+
+<a href="#" style="float: right">Documentation</a> 
+<hr>
