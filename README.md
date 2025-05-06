@@ -1,4 +1,4 @@
-# IO Platform Spec: CLI vs UI
+# IO Platform Specification
 
 ## Overview
 
